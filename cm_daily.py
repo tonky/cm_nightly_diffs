@@ -15,6 +15,8 @@ merged = Popen(["ssh", "-p", "29418", "r.cyanogenmod.com", "gerrit", "query",
     "status:merged", "limit:80", "--format=JSON"],
     stdout=PIPE).communicate()[0]
 
+print "[LIST]"
+
 for c in merged.strip().split("\n"):
     change = json.loads(c)
 
@@ -22,10 +24,11 @@ for c in merged.strip().split("\n"):
         continue
 
     if 'project' in change and change['project'] in cm_p:
-        # print "=========="
-        print "%s | %s" % (change['project'], change['subject'])
+        print "[*][URL=\"%s\"]%s[/URL] (%s)" % (change['url'], change['subject'],
+                change["project"].split("/")[1])
         # print time.ctime(change['lastUpdated'])
         # print change['branch']
         # print change['url']
-        print "%s: %s" % (time.ctime(change['lastUpdated']), change['url'])
-        print
+        # print "%s: %s" % (time.ctime(change['lastUpdated']), change['url'])
+
+print "[LIST/]"
