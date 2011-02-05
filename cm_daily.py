@@ -31,4 +31,4 @@ for c in merged.strip().split("\n"):
         # print change['url']
         # print "%s: %s" % (time.ctime(change['lastUpdated']), change['url'])
 
-print "[LIST/]"
+print "[/LIST]"
