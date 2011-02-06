@@ -1,6 +1,4 @@
-CyanogenMod/android
 CyanogenMod/android_bootable_recovery
-CyanogenMod/android_build
 CyanogenMod/android_dalvik
 CyanogenMod/android_development
 CyanogenMod/android_device_htc_ace
@@ -50,7 +48,6 @@ CyanogenMod/android_hardware_qcom_media
 CyanogenMod/android_hardware_qcom_mm-core
 CyanogenMod/android_hardware_qcom_mm-video
 CyanogenMod/android_hardware_ril
-CyanogenMod/android_hardware_ti_omap3
 CyanogenMod/android_hardware_ti_wlan
 CyanogenMod/android_hardware_wlan_ti
 CyanogenMod/android_libcore
@@ -101,7 +98,6 @@ CyanogenMod/android_system_extras
 CyanogenMod/android_system_netd
 CyanogenMod/android_system_vold
 CyanogenMod/android_system_wlan_ti
-CyanogenMod/android_vendor_cyanogen
 CyanogenMod/cm-kernel
 CyanogenMod/CMBalance
 CyanogenMod/CMStatsServer
