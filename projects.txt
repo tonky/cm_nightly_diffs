@@ -98,7 +98,6 @@ CyanogenMod/android_system_extras
 CyanogenMod/android_system_netd
 CyanogenMod/android_system_vold
 CyanogenMod/android_system_wlan_ti
-CyanogenMod/cm-kernel
 CyanogenMod/CMBalance
 CyanogenMod/CMStatsServer
 CyanogenMod/htc-kernel-msm7x30
