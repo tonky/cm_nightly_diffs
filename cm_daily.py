@@ -7,6 +7,8 @@ import sys
 import time
 
 days = 1
+code = []
+translations = []
 
 if len(sys.argv) == 2:
     days = int(sys.argv[1])
@@ -21,8 +23,6 @@ merged = Popen(["ssh", "-p", "29418", "r.cyanogenmod.com", "gerrit", "query",
     "status:merged", "limit:%d" % (80*days), "--format=JSON"],
     stdout=PIPE).communicate()[0]
 
-print "[LIST]"
-
 for c in merged.strip().split("\n"):
     change = json.loads(c)
 
@@ -30,8 +30,28 @@ for c in merged.strip().split("\n"):
         continue
 
     if 'project' in change and change['project'] in cm_p:
-        print "[*][URL=\"%s\"]%s[/URL] (%s)" % (change['url'], change['subject'],
-                change["project"].split("/")[1])
+        if 'ranslation' in change['subject']:
+            translations.append(change)
+        else:
+            code.append(change)
+
+print "Code changes"
+print "[LIST]"
+
+for change in code:
+    print "[*][URL=\"%s\"]%s[/URL] (%s)" % (change['url'], change['subject'],
+            change["project"].split("/")[1])
+
+print "[/LIST]"
+
+print
+print "Translations"
+print "[LIST]"
+
+for change in translations:
+    print "[*][URL=\"%s\"]%s[/URL] (%s)" % (change['url'], change['subject'],
+            change["project"].split("/")[1])
+
         # print time.ctime(change['lastUpdated'])
         # print change['branch']
         # print change['url']
